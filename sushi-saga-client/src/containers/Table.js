@@ -11,17 +11,12 @@ const Table = (props) => {
   return (
     <Fragment>
       <h1 className="remaining">
-        You have: ${ /* Give me how much money I have left */ } remaining!
+        You have: ${props.money} remaining!
       </h1>
       <div className="table">
         <div className="stack">
           {
-            /* 
-               renderPlates takes an array 
-               and renders an empty plate
-               for every element in the array
-            */
-            renderPlates([])
+            renderPlates(props.eatenSushi)
           }
         </div>
       </div>
@@ -30,3 +25,8 @@ const Table = (props) => {
 }
 
 export default Table
+
+//11. we recieved in props (eatenSushi)
+//we make a constant that takes in those props but we name in 'array' because it is an array but with eaten set to true 
+//we take that array and map over it, meaning we do something with that array, which is whatever is in the () next to map
+//so we 
